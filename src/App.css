@@ -1,0 +1,12 @@
+/* Table Component of calendar */
+
+.today {
+  font-weight: 800;
+  border: 1px solid red;
+  border-radius: 75px;
+}
+
+td:nth-child(even),
+th:nth-child(even) {
+  background-color: #d6eeee;
+}
