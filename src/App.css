@@ -1,12 +1,157 @@
+/* General Settings */
+
+:root {
+  --grey-color: #d9d9d9;
+  --light-back: #f5f5f5;
+  --dark-back: #1d1d1f;
+  --dark-color: #262629;
+  --color-select: #0047ff;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Typography */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  text-align: center;
+  background-color: var(--grey-color);
+}
 /* Table Component of calendar */
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40rem;
+  height: 3.9rem;
+}
+
+td,
+th {
+  width: 5.4rem;
+  height: 4.4rem;
+  font-size: 2rem;
+  border-radius: 5px;
+}
+
+.current-month-light {
+  background-color: white;
+}
+
+.current-month-dark {
+  background-color: var(--dark-color);
+}
+
+.in-prev-month,
+.in-next-month {
+  color: rgba(0, 23, 84, 0.15);
+}
+
+.heading {
+  font-size: 2.4rem;
+}
+.heading-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  height: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.container {
+  border-radius: 20px;
+  width: 50rem;
+  height: 39rem;
+  padding: 15px;
+  margin: auto;
+}
+
+.container-light {
+  background-color: var(--light-back);
+}
+
+.container-dark {
+  background-color: var(--dark-back);
+}
 
 .today {
   font-weight: 800;
-  border: 1px solid red;
-  border-radius: 75px;
+  color: white;
+  background-color: var(--color-select);
 }
 
-td:nth-child(even),
-th:nth-child(even) {
-  background-color: #d6eeee;
+/* Buttons */
+
+.button {
+  padding: 3px;
+  border-radius: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+}
+
+.button-light {
+  background-color: white;
+}
+
+.button-dark {
+  background-color: var(--dark-color);
+  color: white;
+}
+
+/* Toggle Button */
+
+.toggle {
+  position: relative;
+}
+
+.check {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+.slider {
+  display: flex;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background-color: #bfbfbf;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color 0.2s;
+}
+.slider::before {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  border-radius: 21px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+}
+
+.slider:active::before {
+  width: 28px;
+}
+
+.check:checked + .slider {
+  background-color: var(--color-select);
+}
+
+.check:checked + .slider::before {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
 }

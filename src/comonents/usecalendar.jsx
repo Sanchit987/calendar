@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const days = [
-    'Mon','Tue','Wed','Thu','Fri','Sat','Sun'
+    'Mo','Tu','We','Th','Fr','Sa','Su'
 ];
 
 const month = [
@@ -42,7 +42,7 @@ const useCalendar = (daysShort = days,monthNames=month) => {
                     prevMonthStartingPoint++;
                 }else {
                     calendarRows[i] = [...calendarRows[i], {
-                        classes:'',
+                        classes:'current-month',
                         date: `${currentMonthCounter} - ${selectedDate.getMonth()+1} - ${selectedDate.getFullYear()}`,
                         value: currentMonthCounter
                     }];
@@ -50,7 +50,7 @@ const useCalendar = (daysShort = days,monthNames=month) => {
                 }
             }else if( i > 1 && currentMonthCounter < numberOfDays + 1){
                 calendarRows[i] = [...calendarRows[i], {
-                    classes: '',
+                    classes: 'current-month',
                     date: `${currentMonthCounter}-${selectedDate.getMonth() + 1}-${selectedDate.getFullYear()}`,
                     value: currentMonthCounter
                   }];
