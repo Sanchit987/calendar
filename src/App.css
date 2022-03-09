@@ -95,10 +95,12 @@ th {
 
 .container-light {
   background-color: var(--light-back);
+  transition: background-color 1s;
 }
 
 .container-dark {
   background-color: var(--dark-back);
+  transition: background-color 1s;
 }
 
 .today {
@@ -110,6 +112,7 @@ th {
 /* Buttons */
 
 .button {
+  cursor: pointer;
   padding: 3px;
   border-radius: 5rem;
   width: 3.5rem;
