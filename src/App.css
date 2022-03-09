@@ -6,6 +6,7 @@
   --dark-back: #1d1d1f;
   --dark-color: #262629;
   --color-select: #0047ff;
+  --dark-heading: rgb(65, 62, 62);
 }
 
 *,
@@ -41,21 +42,30 @@ th {
   border-radius: 5px;
 }
 
-.current-month-light {
+.current-month {
   background-color: white;
 }
-
 .current-month-dark {
   background-color: var(--dark-color);
+  color: white;
 }
-
 .in-prev-month,
 .in-next-month {
   color: rgba(0, 23, 84, 0.15);
 }
 
+.next-prev-dark {
+  color: var(--dark-heading);
+}
+
 .heading {
   font-size: 2.4rem;
+}
+.heading-dark {
+  color: white;
+}
+.heading-light {
+  color: black;
 }
 .heading-flex {
   display: flex;
@@ -65,6 +75,14 @@ th {
   margin-left: auto;
   margin-right: auto;
   align-items: center;
+}
+
+.month-dark {
+  color: rgb(65, 62, 62);
+}
+
+.month-light {
+  color: black;
 }
 
 .container {
@@ -121,6 +139,10 @@ th {
 }
 
 .slider {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
   display: flex;
   cursor: pointer;
   width: 50px;
